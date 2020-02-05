@@ -6,8 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Weather Dashboard</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
-    <script src='script.js'></script>
+    
 </head>
 <body class="box-set">
     <nav class="navbar navbar-dark bg-light col-md-12">
@@ -45,7 +44,7 @@
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <input id='srchBtn1' class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
 
@@ -75,12 +74,14 @@
                         <div class='humidity' ></div>
                         <div class='windSpeed' ></div>
                         <div class='desc' ></div>
-                        <div class='img' ></div>
+                        <div id="icon"><img id="wicon" src="http://openweathermap.org/img/wn/10d@2x.png" alt="Weather icon"></div>
+                        <div id='uv'></div>
                     </div>
                 </div>
             </div>
         </div>
-    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+    <script src='script.js'></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     </body>
     </html>
