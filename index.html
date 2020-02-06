@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Weather Dashboard</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="box-set">
     <nav class="navbar navbar-dark bg-light col-md-12">
@@ -50,9 +50,9 @@
 
     </div>
     </nav>
-    <!-- <div class='container'> -->
+    <div class='container col-md-12'>
     <div class="row">
-        <div class="col-sm-4">
+        <div id='sideBar' class="col-lg-4">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Search for a City</h5>
@@ -64,21 +64,84 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-sm-8">
-                <div class="card">
-                    <div class="card-body">
-                        <h2 id='cityName' class="card-title"></h2>
-                        <h5 id='date' class="card-title"></h5>
-                        <div class='temp' ></div>
-                        <div class='humidity' ></div>
-                        <div class='windSpeed' ></div>
-                        <div class='desc' ></div>
-                        <div id="icon"><img id="wicon" src="http://openweathermap.org/img/wn/10d@2x.png" alt="Weather icon"></div>
-                        <div id='uv'></div>
+        </div>
+        <div class="weather-container col-lg-8">
+            <div class="card col-md-12">
+                <div class="card-body">
+                    <h2 id='cityName' class="card-title"></h2>
+                    <h6 id='date' class="card-title"></h6>
+                    <div class='temp'></div>
+                    <div class='humidity'></div>
+                    <div class='windSpeed'></div>
+                    <div class='desc'></div>
+                    <div id="icon"><img id="wicon" src="http://openweathermap.org/img/wn/10d@2x.png" alt="Weather icon">
                     </div>
+                    <div id='uv'></div>
                 </div>
+                <div class="forecast-container">
+                    <div class="card-group">
+                        <div class="card-body">
+                            <h2 id='fCityName' class="card-title"></h2>
+                            <h5 id='fDate' class="card-title"></h5>
+                            <div class='fTemp'></div>
+                            <div class='fHumidity'></div>
+                            <div class='fWindSpeed'></div>
+                            <div class='fDesc'></div>
+                            <div id="icon"><img id="fwicon" src="http://openweathermap.org/img/wn/10d@2x.png"
+                                    alt="Weather icon"></div>
+                            <div id='uv'></div>
+                        </div>
+                        <div class="card-body">
+                            <h2 id='f2CityName' class="card-title"></h2>
+                            <h5 id='f2Date' class="card-title"></h5>
+                            <div class='f2Temp'></div>
+                            <div class='f2Humidity'></div>
+                            <div class='f2WindSpeed'></div>
+                            <div class='f2Desc'></div>
+                            <div id="icon"><img id="f2wicon" src="http://openweathermap.org/img/wn/10d@2x.png"
+                                    alt="Weather icon"></div>
+                            <div id='uv'></div>
+                        </div>
+                        <div class="card-body">
+                            <h2 id='f3CityName' class="card-title"></h2>
+                            <h5 id='f3Date' class="card-title"></h5>
+                            <div class='f3Temp'></div>
+                            <div class='f3Humidity'></div>
+                            <div class='f3WindSpeed'></div>
+                            <div class='f4Desc'></div>
+                            <div id="icon"><img id="f3wicon" src="http://openweathermap.org/img/wn/10d@2x.png"
+                                    alt="Weather icon"></div>
+                            <div id='uv'></div>
+                        </div>
+                        <div class="card-body">
+                            <h2 id='f4CityName' class="card-title"></h2>
+                            <h5 id='f4Date' class="card-title"></h5>
+                            <div class='f4Temp'></div>
+                            <div class='f4Humidity'></div>
+                            <div class='f4WindSpeed'></div>
+                            <div class='f4Desc'></div>
+                            <div id="icon"><img id="f4wicon" src="http://openweathermap.org/img/wn/10d@2x.png"
+                                    alt="Weather icon"></div>
+                            <div id='uv'></div>
+                        </div>
+                        <div class="card-body">
+                            <h2 id='f5CityName' class="card-title"></h2>
+                            <h5 id='f5Date' class="card-title"></h5>
+                            <div class='f5Temp'></div>
+                            <div class='f5Humidity'></div>
+                            <div class='f5WindSpeed'></div>
+                            <div class='f5Desc'></div>
+                            <div id="icon"><img id="f5wicon" src="http://openweathermap.org/img/wn/10d@2x.png"
+                                    alt="Weather icon"></div>
+                            <div id='uv'></div>
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
+        </div>
+        </div>
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
     <script src='script.js'></script>

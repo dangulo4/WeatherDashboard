@@ -1,1 +1,41 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    background: #dce2e5;
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-size: 14px;
+    padding: 10px;
+    width: 100%;
+   
+  }
+
+.container{
+  width: 100%;
+  padding: 5px;
+  margin:5px;
+}
+
+
+#sideBar{
+  width: 100%;
+}
+
+.forecast-container {
+  margin: 40px auto;
+  width: 100%;
+  border: 1px solid #de6042;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 2px 5px 20px 1px #444;
+}
+
+
+
+
+
+
 
