@@ -1,4 +1,9 @@
 $(document).ready(function () {
+    var cityInput = document.querySelector('#fndCity');
+    var cities = document.querySelector('#cities');
+    var cityList = document.querySelector('#city-list');
+
+    var cities = [];
 
     $('#srchBtn').on('click', function () {
         // Openweather API Key
@@ -8,7 +13,7 @@ $(document).ready(function () {
         console.log(city);
 
         let queryURL = 'https://api.openweathermap.org/data/2.5/weather?q=' +
-            city + '&' + 'appid=' + APIKey;
+            city + '&units=imperial&' + 'appid=' + APIKey;
 
         // AJAX call to Openweathermap API
         $.ajax({
@@ -65,17 +70,13 @@ $(document).ready(function () {
     }
 
 
-
-
-
-
     function renderForecastData(cityName, APIKey) {
         // AJAX call to Openweathermap API
         $.ajax({
             type: 'GET',
             url: 'https://api.openweathermap.org/data/2.5/forecast?q=' +
                 cityName + '&units=imperial' + '&appid=' + APIKey,
-            
+
             dataType: 'json',
             success: function (forecast) {
                 console.log('renderForecastData', forecast.list.length);
@@ -106,4 +107,86 @@ $(document).ready(function () {
 
         })
     }
+
+    init();
+
+    function renderCity() {
+        // Clear cityList element 
+        cityList.innerHTML = '';
+
+        //Render a new li for each city
+        for (var i = 0; i < cities.length; i++) {
+            var city = cities[i];
+
+            var li = document.createElement('li');
+            li.textContent = city;
+            li.setAttribute('data-index', i);
+            li.setAttribute('class', 'cityUL');
+
+            var button = document.createElement('button');
+            // li.setAttribute('class', 'cityBtn');
+            button.textContent = 'Remove';
+            li.appendChild(button);
+
+            cityList.appendChild(li);
+        }
+    }
+
+    function init() {
+        //Get stored cities from localStorage
+        //Parse the JSON string to an object
+        var storedCity = JSON.parse(localStorage.getItem('cities'));
+
+        //If cities were retrieved from localStorage, update the cities array to it
+        if (storedCity !== null) {
+            cities = storedCity;
+        }
+        //Render cities to the DOM
+        renderCity();
+    }
+
+    function storeCity() {
+        //Stringify and set 'cities' key in localStorage to city array
+        localStorage.setItem('cities', JSON.stringify(cities));
+    }
+
+    //When submitted
+    $('#srchBtn').click(function (event) {
+        event.preventDefault();
+        var cityText = cityInput.value;
+        //Return from function early if submitted cityText is blank
+        if (cityText === '') {
+            return;
+        }
+
+        cities.push(cityText);
+        cityInput.value = "";
+
+        storeCity();
+        renderCity();
+    });
+
+    cityList.addEventListener("click", function (event) {
+        var element = event.target;
+
+        //if the element is a button
+        if (element.matches('button') === true) {
+            //Get the data-index value and remove the city element from the list
+            var index = element.parentElement.getAttribute('data-index');
+            cities.splice(index, 1);
+
+            //Store updated cities in localStorage and re-render
+            storeCity();
+            renderCity();
+        }
+    })
+
+    // $('#srchBtn').click(function(event) {
+    //     event.preventDefault();
+    //     var element = event.target;
+
+    //storeCity();
+
+
+
 });

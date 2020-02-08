@@ -33,15 +33,13 @@
                         Dropdown
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="https://openweathermap.org/">Openweathermap</a>
                         <a class="dropdown-item" href="#">Another action</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Something else here</a>
                     </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </li>
+                
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <input id='srchBtn1' class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -54,7 +52,7 @@
     <div class="row">
         <div id='sideBar' class="col-lg-4">
             <div class="card">
-                <div class="card-body">
+                <div id= 'cities' class="card-body" method='POST'>
                     <h5 class="card-title">Search for a City</h5>
                         <div class="input-group ">
                             <input type="text" id='fndCity' class="form-control" placeholder="Enter City Name" aria-label="Recipient's username" aria-describedby="button-addon2">
@@ -62,8 +60,9 @@
                             <button id='srchBtn' class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
                             </div>
                         </div>
-                    </div>
+                    <ul id="city-list" class="mt-9"></ul>
                 </div>
+            </div>
         </div>
         <div class="weather-container col-lg-8">
             <div class="card col-md-12">

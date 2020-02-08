@@ -33,8 +33,8 @@ body {
   overflow: hidden;
   box-shadow: 2px 5px 20px 1px #444;
   font-family: "Roboto", sans-serif;
-    font-weight: 100;
-    font-size: 14px
+  font-weight: 100;
+  font-size: 14px
 }
 
 
@@ -45,6 +45,59 @@ body {
   width: 100%;
 }
 
+ul {
+  list-style-type: none;
+  padding: 0;
+  /* box-shadow: 2px 5px 20px 1px #444;
+  border: 1px solid #de6042;
+  border-radius: 10px; */
+}
+
+.cityUL {
+  height: 50px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 5px;
+  background-color: whitesmoke;
+ 
+  font-size: 1.5em;
+  line-height: 1.5;
+}
+
+.cityUL:before {
+  content: "\200B";
+  position: absolute;
+}
+
+.cityUL::after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+.cityUL button {
+  float: right;
+  border: none;
+  height: 40px;
+  cursor: pointer;
+  background-color: #d48207;
+  box-shadow: 2px 5px 20px 1px #444;
+  border: 1px solid #de6042;
+  text-transform: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 1em;
+}
+
+.cityUL button:hover {
+  background-color: #febc5d;
+}
+
+.todos {
+  width: 800px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
 
 
 
